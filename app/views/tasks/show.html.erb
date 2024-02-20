@@ -1,0 +1,16 @@
+<h1><%= @task[:title] %></h1>
+
+<h3><%= link_to 'Edit task', edit_path(@task) %></h3>
+
+<p><%= @task[:details] %></p>
+<p> Is this task completed? <%= @task[:completed] == true ? "Yes" : "No"%>
+</p>
+
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<%= link_to "Back to tasks", index_path %>
+
+<%# <input type=checkbox <%= @task[:completed] == true ? "checked" : ""%>
