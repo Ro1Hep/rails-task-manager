@@ -1,0 +1,8 @@
+<h1><%= @task[:title] %></h1>
+
+<p><%= @task[:details] %></p>
+<p> Is this task completed?
+<input type=checkbox <%= @task[:completed] == true ? "checked" : ""%>>
+</p>
+
+<%= link_to "Back to tasks", index_path %>
